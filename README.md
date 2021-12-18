@@ -11,11 +11,16 @@ We're going to be using Markov Chains to generate epithets procedurally. If you 
 
 ## Roadmap 
 ~~Strikethrough indicates status is finished~~
-- Disable push to default branch
-- Set up CI/CD through GitHub Actions
-	- Add linter 
-	- Add unit tests
-- Markov Chain Generator Code
+- ~~Add basic project info to README~~
+- ~~Disable push to default branch~~
+- ~~Add pull_request_template~~
+- Set up CI through GitHub Actions
+	- Add linter to CI
+	- Add unit tests to CI
+- Add linter to Sublime
+- Add virtual environment for Python locally
+- Code Markov Chain Generator
 - Scrape Data
 	- Game of Thrones Epithets
 	- Backed by weighted Dictionary Chains
+- Expand data set through manual filtering
