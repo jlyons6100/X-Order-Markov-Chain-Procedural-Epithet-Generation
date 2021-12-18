@@ -1,9 +1,7 @@
 # X-Order-Markov-Chain-Procedural-Epithet-Generation
 Generating Fantasy Epithets using Markov Chains
 
-![book1](images/book.jpg)
-![book2](images/book.jpeg)
-![book3](images/book.png)
+![fantasy_painting](images/landscape.jpg)
 
 ## Why
 I'm an amateur fantasy writer with a terrible imagination. I need some way to create epithets without working hard. This seems like a good time to use Markov Chains.
