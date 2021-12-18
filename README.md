@@ -14,11 +14,13 @@ We're going to be using Markov Chains to generate epithets procedurally. If you 
 - ~~Add basic project info to README~~
 - ~~Disable push to default branch~~
 - ~~Add pull_request_template~~
-- Set up CI through GitHub Actions
-	- Add linter to CI
-	- Add unit tests to CI
-- Add linter to Sublime
-- Add virtual environment for Python locally
+- ~~Set up CI through GitHub Actions~~
+	- ~~install virtualenv in CI~~
+	- ~~Add linter to CI~~
+	- ~~Add unit tests to CI~~
+- ~~Add Flake8 linting locally~~
+- ~~Add unit tests locally~~
+- ~~Add virtual environment for Python locally~~
 - Code Markov Chain Generator
 - Scrape Data
 	- Game of Thrones Epithets
