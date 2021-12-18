@@ -1,6 +1,4 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
+name: CI Workflow
 
 # Controls when the workflow will run
 on:
@@ -24,19 +22,19 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+      # Setup Python
       - name: Set up Python environment
         uses: actions/setup-python@v1
         with:
           python-version: "3.8"
-
+      # Linting for code quality
       - name: Python flake8 Lint
         uses: py-actions/flake8@v2
-
+      # Install pipenv
       - name: Install pipenv
         run: pip install pipenv
-
-      - name: Run tests
+      # Unit tests for code coverage
+      - name: Run Unit tests
         run: |
           pipenv install --dev
           pipenv run pytest
