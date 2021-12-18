@@ -13,7 +13,7 @@ We're going to be using Markov Chains to generate epithets procedurally. If you 
 
 ## Roadmap 
 ~~Strikethrough indicates status is finished~~
-- ~~Add basic project info to README~~
+- ~~Add basic project info to README~~ 
 - ~~Disable push to default branch~~
 - ~~Add pull_request_template~~
 - ~~Set up CI through GitHub Actions~~
