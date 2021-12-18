@@ -32,3 +32,11 @@ jobs:
 
       - name: Python flake8 Lint
         uses: py-actions/flake8@v2
+
+      - name: Install pipenv
+        run: pip install pipenv
+
+      - name: Run tests
+        run: |
+          pipenv install --dev
+          pipenv run pytest
