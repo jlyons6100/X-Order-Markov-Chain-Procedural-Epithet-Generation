@@ -28,3 +28,19 @@ We're going to be using Markov Chains to generate epithets procedurally. If you 
 	- Game of Thrones Epithets
 	- Backed by weighted Dictionary Chains
 - Expand data set through manual filtering
+
+## Design
+- Markov Chain Class:
+  - Iterate through words
+    - Each letter adds to count of letter at index/level X
+    - [Weighted random choice](https://docs.python.org/3/library/random.html#random.choices) from (letter, count) in level
+- Wrapper around Markov Chain Class:
+  - Create chains for backup, GOT + custom
+  - Logic behind what to do when getting stuck
+  - How long chain should be
+  - When to use backup
+- [sqlite3 DB](https://docs.python.org/3/library/sqlite3.html)
+	- Store Game of Thrones Epithets
+	- Store backup dictionary
+	- Store Custom Epithets
+	- Epithet, type(custom, backup, GOT)
