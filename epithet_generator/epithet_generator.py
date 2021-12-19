@@ -22,7 +22,3 @@ class epithetGenerator:
         # continue within word (BACKUP + restart primary)
         # continue with additional epithet (restart primary with , separating)
         return ""
-e = epithetGenerator()
-
-
-print(e.chainPrimary)
