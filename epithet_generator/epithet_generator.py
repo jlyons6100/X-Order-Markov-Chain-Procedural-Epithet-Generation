@@ -1,4 +1,4 @@
-from epithet_generator.markov_chain import MarkovChain
+from epithet_generator.markov_chain import markovChain
 CONTINUE_CHANCE = .25
 
 
@@ -7,9 +7,9 @@ CONTINUE_CHANCE = .25
 class EpithetGenerator:
     def __init__(self):
         # Game of Thrones + Saved Generated Names
-        self.chain_primary = MarkovChain()
+        self.chain_primary = markovChain()
         # Backup chain from dictionary
-        self.chain_backup = MarkovChain()
+        self.chain_backup = markovChain()
 
     # Logic to fill chains
     def add(self, word, chain_type):
