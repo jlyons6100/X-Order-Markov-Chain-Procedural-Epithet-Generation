@@ -2,15 +2,19 @@ import random
 
 
 class markovChain:
-    def __init__(self):
+    def __init__(self, order=1):
         self.root = {}
+        self.order = order
+
+    def _chunker(self, seq, size):
+        return (seq[pos:pos + size] for pos in range(0, len(seq), size))
 
     def add(self, word):
         node = self.root
-        # Populate tree with letter counts
-        for letter in word.lower():
+        # Populate trie with letter-chunks
+        for letterChunk in self._chunker(word.lower(), self.order):
             lettersAndCount = node.setdefault(
-                letter,
+                letterChunk,
                 {"nextLetters": {}, "count": 0})
             node = lettersAndCount["nextLetters"]
             lettersAndCount["count"] += 1
@@ -35,11 +39,11 @@ class markovChain:
     def getProbability(self, prefix):
         node = self.root
         probability = 1
-        for letter in prefix.lower():
-            if letter not in node:
+        for letterChunk in self._chunker(prefix.lower(), self.order):
+            if letterChunk not in node:
                 return 0
             total = sum([node[key]["count"] for key in node.keys()])
             # Independent events, multiply together for probability
-            probability *= ((node[letter]["count"])/(total))
-            node = node[letter]["nextLetters"]
+            probability *= ((node[letterChunk]["count"])/(total))
+            node = node[letterChunk]["nextLetters"]
         return probability
