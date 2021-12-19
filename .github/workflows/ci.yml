@@ -30,11 +30,11 @@ jobs:
       # Install pipenv
       - name: Install pipenv
         run: pip install pipenv
-      # Linting for code quality
-      - name: Python flake8 Lint
-        uses: py-actions/flake8@v2
       # Unit tests for code coverage
       - name: Run Unit tests
         run: |
           pipenv install --dev
           pipenv run pytest
+      # Linting for code quality
+      - name: Linting
+        run: pipenv run flake8
