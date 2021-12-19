@@ -18,3 +18,10 @@ def test_generation_not_empty():
     chain.add("sea")
     chain.add("sea")
     assert chain.generate() == "sea"
+
+
+def test_restart_generation():
+    chain = markovChain()
+    chain.add("sea")
+    chain.add("sea")
+    assert chain.generate("s") == "sea"
