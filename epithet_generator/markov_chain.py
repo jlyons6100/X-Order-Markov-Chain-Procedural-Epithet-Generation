@@ -1,13 +1,16 @@
 import random
 
 
-class MarkovChain:
+class markovChain:
     def __init__(self, order=1):
         self.root = {}
         self.order = order
 
     def _chunker(self, seq, size):
         return (seq[pos:pos + size] for pos in range(0, len(seq), size))
+
+    def ccAndCC(self):
+        pass
 
     def add(self, word):
         node = self.root
