@@ -30,10 +30,11 @@ class markovChain:
     def getProbability(self, prefix):
         node = self.root
         probability = 1
-        for letter in prefix:
+        for letter in prefix.lower():
             if letter not in node:
                 return 0
             total = sum([node[key]["count"] for key in node.keys()])
+            # Independent events, multiply together for probability
             probability *= ((node[letter]["count"])/(total))
             node = node[letter]["nextLetters"]
         return probability
