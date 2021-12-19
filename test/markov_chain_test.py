@@ -1,27 +1,27 @@
-from epithet_generator.markov_chain import markovChain
+from epithet_generator.markov_chain import MarkovChain
 
 
 def test_empty_generation():
-    assert markovChain().generate() == ""
+    assert MarkovChain().generate() == ""
 
 
 def test_get_probability():
-    chain = markovChain()
+    chain = MarkovChain()
     chain.add("Sea")
     chain.add("see")
-    assert chain.getProbability("se") == 1
-    assert chain.getProbability("sea") == 0.5
+    assert chain.get_probability("se") == 1
+    assert chain.get_probability("sea") == 0.5
 
 
 def test_generation_not_empty():
-    chain = markovChain()
+    chain = MarkovChain()
     chain.add("sea")
     chain.add("sea")
     assert chain.generate() == "sea"
 
 
 def test_restart_generation():
-    chain = markovChain()
+    chain = MarkovChain()
     chain.add("sea")
     chain.add("sea")
     assert chain.generate("s") == "sea"

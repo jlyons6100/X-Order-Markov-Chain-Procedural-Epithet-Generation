@@ -1,7 +1,7 @@
 import random
 
 
-class markovChain:
+class MarkovChain:
     def __init__(self, order=1):
         self.root = {}
         self.order = order
@@ -12,38 +12,38 @@ class markovChain:
     def add(self, word):
         node = self.root
         # Populate trie with letter-chunks
-        for letterChunk in self._chunker(word.lower(), self.order):
-            lettersAndCount = node.setdefault(
-                letterChunk,
+        for letter_chunk in self._chunker(word.lower(), self.order):
+            letters_and_count = node.setdefault(
+                letter_chunk,
                 {"nextLetters": {}, "count": 0})
-            node = lettersAndCount["nextLetters"]
-            lettersAndCount["count"] += 1
+            node = letters_and_count["nextLetters"]
+            letters_and_count["count"] += 1
 
     def generate(self, start=None):
-        wordList = []
+        word_list = []
         node = self.root
         # Restart chain logic
         if start:
             node = node[start]["nextLetters"]
-            wordList.append(start)
+            word_list.append(start)
 
         while len(node.keys()) != 0:
             weights = [node[key]["count"] for key in node.keys()]
             # Pick random character based on weight
-            newChar = random.choices(list(node.keys()), weights)[0]
-            wordList.append(newChar)
+            new_char = random.choices(list(node.keys()), weights)[0]
+            word_list.append(new_char)
             # Move to next node
-            node = node[newChar]["nextLetters"]
-        return "".join(wordList)
+            node = node[new_char]["nextLetters"]
+        return "".join(word_list)
 
-    def getProbability(self, prefix):
+    def get_probability(self, prefix):
         node = self.root
         probability = 1
-        for letterChunk in self._chunker(prefix.lower(), self.order):
-            if letterChunk not in node:
+        for letter_chunk in self._chunker(prefix.lower(), self.order):
+            if letter_chunk not in node:
                 return 0
             total = sum([node[key]["count"] for key in node.keys()])
             # Independent events, multiply together for probability
-            probability *= ((node[letterChunk]["count"])/(total))
-            node = node[letterChunk]["nextLetters"]
+            probability *= ((node[letter_chunk]["count"])/(total))
+            node = node[letter_chunk]["nextLetters"]
         return probability
