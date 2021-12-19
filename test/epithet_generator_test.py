@@ -1,5 +1,5 @@
-from epithet_generator.epithet_generator import epithetGenerator
+from epithet_generator.epithet_generator import EpithetGenerator
 
 
 def test_empty_generation():
-    assert epithetGenerator().generate() == ""
+    assert EpithetGenerator().generate() == ""

@@ -27,12 +27,12 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: "3.8"
-      # Linting for code quality
-      - name: Python flake8 Lint
-        uses: py-actions/flake8@v2
       # Install pipenv
       - name: Install pipenv
         run: pip install pipenv
+      # Linting for code quality
+      - name: Python flake8 Lint
+        uses: py-actions/flake8@v2
       # Unit tests for code coverage
       - name: Run Unit tests
         run: |
