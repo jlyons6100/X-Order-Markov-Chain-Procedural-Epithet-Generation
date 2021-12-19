@@ -5,7 +5,7 @@ class markovChain:
     def __init__(self):
         self.root = {}
 
-    def addWord(self, word):
+    def add(self, word):
         node = self.root
         # Populate tree with letter counts
         for letter in word.lower():
@@ -15,9 +15,14 @@ class markovChain:
             node = lettersAndCount["nextLetters"]
             lettersAndCount["count"] += 1
 
-    def generateWord(self):
+    def generate(self, start=None):
         wordList = []
         node = self.root
+        # Restart chain logic
+        if start:
+            node = node[start]["nextLetters"]
+            wordList.append(start)
+
         while len(node.keys()) != 0:
             weights = [node[key]["count"] for key in node.keys()]
             # Pick random character based on weight
