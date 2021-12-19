@@ -7,3 +7,6 @@ class markovChain:
 
     def generateWord(self):
         return ""
+
+    def getProbabilities(self):
+        pass
