@@ -1,5 +1,5 @@
-from context import EpithetGenerator
+from context import EpithetChainCollection
 
 
 def test_empty_generation():
-    assert EpithetGenerator().generate() == ""
+    assert EpithetChainCollection().generate() == ""
