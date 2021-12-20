@@ -5,9 +5,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 CONTINUE_CHANCE = .25
 
 from generators.markov_chain import MarkovChain
-# Continue if chain is broken with some probability
-# When to use backup logic
-class EpithetGenerator:
+class EpithetChainCollection:
     def __init__(self):
         # Game of Thrones + Saved Generated Names
         self.chain_primary = MarkovChain()
@@ -25,4 +23,4 @@ class EpithetGenerator:
         # continue within word (BACKUP + restart primary)
         # continue with additional epithet (restart primary with , separating)
         return ""
-print(EpithetGenerator())
+print(EpithetChainCollection())
