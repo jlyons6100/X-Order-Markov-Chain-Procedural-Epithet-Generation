@@ -1,4 +1,4 @@
-from epithet_generator.epithet_generator import EpithetGenerator
+from context import EpithetGenerator
 
 
 def test_empty_generation():

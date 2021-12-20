@@ -1,4 +1,4 @@
-from epithet_generator.markov_chain import MarkovChain
+from context import MarkovChain
 
 
 def test_empty_generation():

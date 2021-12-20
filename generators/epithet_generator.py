@@ -1,7 +1,10 @@
-from epithet_generator.markov_chain import MarkovChain
+import os
+import sys
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 CONTINUE_CHANCE = .25
 
-
+from generators.markov_chain import MarkovChain
 # Continue if chain is broken with some probability
 # When to use backup logic
 class EpithetGenerator:
@@ -22,3 +25,4 @@ class EpithetGenerator:
         # continue within word (BACKUP + restart primary)
         # continue with additional epithet (restart primary with , separating)
         return ""
+print(EpithetGenerator())
